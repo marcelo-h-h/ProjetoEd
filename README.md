@@ -6,6 +6,6 @@ Esse é o repositório para o jogo "A lenda de Poupatempo", desenvolvido por est
 
 <h3>Authors:
 <ul style="list-style-type:disc";>
-Rene Ferrante
-Marcelo H.
-Rato</ul></h3>
+<li>Rene Ferrante</li>
+<li>Marcelo H.</li>
+<li>Rato</li></ul></h3>
