@@ -12,7 +12,9 @@ func _ready():
 	self.set_process_input(true)
 	self.set_process(true)
 	self.set_frame(0)
-
+	self.set_animation("ParadodeFrente")
+	print(self.get_animation())
+		
 			
 func _input(event):
 	if(event.type == InputEvent.KEY):
@@ -20,30 +22,31 @@ func _input(event):
 		var curFrame = self.get_frame()
 		
 		if(event.scancode == KEY_D):
+			self.set_animation("AndandoDireita")
 			curPos.x += spd
 			self.set_pos(curPos)
-			if(curFrame>=8 && curFrame<10):
-				curFrame += 1
-			else:
-				curFrame = 8
-			self.set_frame(curFrame)
 			self.get_tree().set_input_as_handled()
 
 		if(event.scancode == KEY_A):
+			self.set_animation("AndandoEsquerda")
 			curPos.x -= spd
 			self.set_pos(curPos)
 			self.get_tree().set_input_as_handled()
 			
 		if(event.scancode == KEY_W):
+			self.set_animation("AndandodeCostas")
 			curPos.y -= spd
 			self.set_pos(curPos)
 			self.get_tree().set_input_as_handled()
 			
 		if(event.scancode == KEY_S):
+			self.set_animation("AndandodeFrente")
 			curPos.y += spd
 			self.set_pos(curPos)
 			self.get_tree().set_input_as_handled()
 				
+		if(event.scancode == KEY_D && event.pressed == false):
+			self.set_animation("ParadoDireita")
 func _process(delta):
 	self.set_frame(self.get_frame())
 	if(Input.is_key_pressed(KEY_ESCAPE)):
