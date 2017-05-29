@@ -8,4 +8,4 @@ Esse é o repositório para o jogo "A lenda de Poupatempo", desenvolvido por est
 <ul style="list-style-type:disc";>
 <li>Rene Ferrante</li>
 <li>Marcelo H.</li>
-<li>Rato</li></ul></h3>
+<li>Gustavo Nakagawa</li></ul></h3>
