@@ -18,8 +18,8 @@ func _ready():
 			
 func _input(event):
 	if(event.type == InputEvent.KEY):
+		#Player movement ----------------------------------------
 		var curPos = self.get_pos()
-		var curFrame = self.get_frame()
 		
 		if(event.scancode == KEY_D):
 			self.set_animation("AndandoDireita")
@@ -47,6 +47,14 @@ func _input(event):
 				
 		if(event.scancode == KEY_D && event.pressed == false):
 			self.set_animation("ParadoDireita")
+		if(event.scancode == KEY_A && event.pressed == false):
+			self.set_animation("ParadoEsquerda")
+		if(event.scancode == KEY_W && event.pressed == false):
+			self.set_animation("ParadoCostas")
+		if(event.scancode == KEY_S && event.pressed == false):
+			self.set_animation("ParadodeFrente")
+	#------------------------Player movement
+	
 func _process(delta):
 	self.set_frame(self.get_frame())
 	if(Input.is_key_pressed(KEY_ESCAPE)):
