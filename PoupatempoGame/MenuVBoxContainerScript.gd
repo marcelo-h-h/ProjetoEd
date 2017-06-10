@@ -7,12 +7,15 @@ extends VBoxContainer
 func _ready():
 	self.set_size(Vector2(4*(self.get_viewport().get_rect().size.width/6), 6*(self.get_viewport().get_rect().size.height/8)))
 	self.set_pos(Vector2(self.get_viewport().get_rect().size.width/6,self.get_viewport().get_rect().size.height/8))
-
+	set_process(true)
 
 func _on_ExitButton_pressed():
 	self.get_tree().quit()
 
+func _process(delta):
+	self.set_size(Vector2(4*(self.get_viewport().get_rect().size.width/6), 6*(self.get_viewport().get_rect().size.height/8)))
+	self.set_pos(Vector2(self.get_viewport().get_rect().size.width/6,self.get_viewport().get_rect().size.height/8))
 
 func _on_StartButton_pressed():
-	get_tree().change_scene("res://GameScene.tscn")
+	get_tree().change_scene("res://GameScene1.tscn")
 	
