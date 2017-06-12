@@ -3,14 +3,14 @@
 [ext_resource path="res://tileset1.xml" type="TileSet" id=1]
 [ext_resource path="res://KinematicPrincipalScript.gd" type="Script" id=2]
 [ext_resource path="res://Images/Principal/FrontWalkStand.png" type="Texture" id=3]
-[ext_resource path="res://Images/Principal/SideWalk2.png" type="Texture" id=4]
-[ext_resource path="res://Images/Principal/SideWalkStand.png" type="Texture" id=5]
-[ext_resource path="res://Images/Principal/SideWalk1.png" type="Texture" id=6]
-[ext_resource path="res://Images/Principal/SideWalkStand2.png" type="Texture" id=7]
+[ext_resource path="res://Images/Principal/SideWalkStand.png" type="Texture" id=4]
+[ext_resource path="res://Images/Principal/SideWalk21.png" type="Texture" id=5]
+[ext_resource path="res://Images/Principal/SideWalkStand2.png" type="Texture" id=6]
+[ext_resource path="res://Images/Principal/SideWalk22.png" type="Texture" id=7]
 [ext_resource path="res://Images/Principal/BackWalkStand.png" type="Texture" id=8]
-[ext_resource path="res://Images/Principal/SideWalk21.png" type="Texture" id=9]
-[ext_resource path="res://Images/Principal/SideWalk22.png" type="Texture" id=10]
-[ext_resource path="res://Images/Principal/BackWalk1.png" type="Texture" id=11]
+[ext_resource path="res://Images/Principal/BackWalk1.png" type="Texture" id=9]
+[ext_resource path="res://Images/Principal/SideWalk2.png" type="Texture" id=10]
+[ext_resource path="res://Images/Principal/SideWalk1.png" type="Texture" id=11]
 [ext_resource path="res://Images/Principal/FrontWalk1.png" type="Texture" id=12]
 [ext_resource path="res://Images/Principal/FrontWalk2.png" type="Texture" id=13]
 
@@ -27,45 +27,45 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "ParadoEsq",
+"speed": 1.0
+}, {
 "frames": [ ExtResource( 3 ) ],
 "loop": true,
 "name": "ParadoBaixo",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ), ExtResource( 5 ), ExtResource( 6 ) ],
+"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
 "loop": true,
-"name": "AndandoEsq",
+"name": "AndandoDir",
 "speed": 3.5
-}, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "ParadoDir",
-"speed": 5.0
 }, {
 "frames": [ ExtResource( 8 ) ],
 "loop": true,
 "name": "ParadoCima",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 9 ), ExtResource( 7 ), ExtResource( 10 ) ],
-"loop": true,
-"name": "AndandoDir",
-"speed": 3.5
-}, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "ParadoEsq",
-"speed": 1.0
-}, {
-"frames": [ ExtResource( 11 ), ExtResource( 8 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "AndandoCima",
+"speed": 3.5
+}, {
+"frames": [ ExtResource( 10 ), ExtResource( 4 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "AndandoEsq",
 "speed": 3.5
 }, {
 "frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
 "loop": true,
 "name": "AndandoBaixo",
 "speed": 3.5
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "ParadoDir",
+"speed": 5.0
 } ]
 
 [node name="Node" type="Node"]
@@ -116,5 +116,24 @@ transform/scale = Vector2( 2, 2 )
 frames = SubResource( 2 )
 animation = "default"
 playing = true
+
+[node name="Camera2D" type="Camera2D" parent="Node2D/KinematicBody2D"]
+
+anchor_mode = 1
+rotating = true
+current = false
+zoom = Vector2( 1, 1 )
+limit/left = -10000000
+limit/top = -10000000
+limit/right = 10000000
+limit/bottom = 10000000
+drag_margin/h_enabled = true
+drag_margin/v_enabled = true
+smoothing/enable = true
+smoothing/speed = 5.0
+drag_margin/left = 0.2
+drag_margin/top = 0.2
+drag_margin/right = 0.2
+drag_margin/bottom = 0.2
 
 
