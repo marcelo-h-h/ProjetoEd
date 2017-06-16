@@ -6,7 +6,7 @@ var MOTION_SPEED = 300
 func _ready():
 	set_fixed_process(true)
 #	set_process_input(true)
-	set_pos(Vector2(get_viewport_rect().size.width/2, get_viewport_rect().size.height/2))
+	set_pos(Vector2(get_viewport_rect().size.width/2, get_viewport_rect().size.height/8))
 	
 func _fixed_process(delta):
 	var motion = Vector2()
