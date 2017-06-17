@@ -11,10 +11,9 @@ while (proximo != 0):
     if (proximo < 60):
         lista.append(proximo)
     else:
-        ultimo = 0
         for pessoa in lista:
-            if(pessoa > proximo):
-                ultimo = lista.index(pessoa) + 1
-        lista.insert(ultimo, proximo)
+            if(pessoa < 60):
+                lista.insert(lista.index(pessoa), proximo)
+                break
     print('lista agora: ', lista)
     proximo = int(input('Proximo a entrar na fila: '))
