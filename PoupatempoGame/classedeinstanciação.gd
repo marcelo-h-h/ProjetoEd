@@ -6,6 +6,7 @@ var numerodepessoasinicial = 10
 var ultimaAge = 15
 
 func _ready():
+	randomize()
 	set_process(true)
 	var i = 0
 	while i < numerodepessoasinicial:
@@ -62,5 +63,4 @@ func _on_tempoDeSurgimento_timeout():
 	get_node("tempoDeSurgimento").start()
 	criaPessoa()
 	update()
-	print("TIMEOUT")
 	
