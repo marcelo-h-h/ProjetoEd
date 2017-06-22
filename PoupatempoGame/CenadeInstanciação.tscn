@@ -29,4 +29,31 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
+[node name="Button" type="Button" parent="Node2D"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 320.0
+margin/top = 96.0
+margin/right = 449.0
+margin/bottom = 116.0
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+text = "criar nova persona"
+flat = false
+
+[node name="tempoDeSurgimento" type="Timer" parent="Node2D"]
+
+process_mode = 1
+wait_time = 1.0
+one_shot = false
+autostart = true
+
+[connection signal="pressed" from="Node2D/Button" to="Node2D" method="_on_Button_pressed"]
+
+[connection signal="timeout" from="Node2D/tempoDeSurgimento" to="Node2D" method="_on_tempoDeSurgimento_timeout"]
+
 
