@@ -33,11 +33,6 @@ animations = [ {
 "name": "AndandoEsq",
 "speed": 3.5
 }, {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "ParadoEsq",
-"speed": 1.0
-}, {
 "frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "AndandoDir",
@@ -58,15 +53,20 @@ animations = [ {
 "name": "ParadoDir",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 4 ) ],
-"loop": true,
-"name": "ParadoBaixo",
-"speed": 5.0
-}, {
 "frames": [ ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "AndandoBaixo",
 "speed": 3.5
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "ParadoEsq",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "ParadoBaixo",
+"speed": 5.0
 } ]
 
 [node name="Node" type="Node"]

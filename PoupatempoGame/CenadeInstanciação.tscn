@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=1]
+[gd_scene load_steps=4 format=1]
 
 [ext_resource path="res://classedeinstanciação.gd" type="Script" id=1]
 [ext_resource path="res://Images/Average1/FrontWalkStand.png" type="Texture" id=2]
+[ext_resource path="res://scriptTextoTempoDeSurgimento.gd" type="Script" id=3]
 
 [node name="Node" type="Node"]
 
@@ -51,6 +52,21 @@ process_mode = 1
 wait_time = 1.0
 one_shot = false
 autostart = true
+script/script = ExtResource( 3 )
+
+[node name="textoTempoDeSurgimento" type="Label" parent="Node2D/tempoDeSurgimento"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 352.0
+margin/top = 64.0
+margin/right = 392.0
+margin/bottom = 78.0
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
 
 [connection signal="pressed" from="Node2D/Button" to="Node2D" method="_on_Button_pressed"]
 
