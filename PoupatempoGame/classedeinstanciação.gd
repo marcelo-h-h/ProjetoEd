@@ -3,7 +3,6 @@ extends Node2D
 var filadepessoas = []
 var ultimaPos = Vector2(110,415)
 var numerodepessoasinicial = 10
-var ultimaAge = 15
 
 func _ready():
 	randomize()
@@ -14,13 +13,7 @@ func _ready():
 		i += 1
 	get_node("tempoDeSurgimento").set_wait_time(5.2)
 	
-#	for i in range(0, filadepessoas.size()):
-#		filadepessoas[i].set_pos(ultimaPos)
-#		ultimaPos = i*10*Vector2(5, 0) + Vector2(110,415)
-	# ---- surge nova pessoa -----------------------------------
-
-	#-----------------------------------------------------------------------
-		
+	
 func _draw():
 	for i in range(0, filadepessoas.size()):
 		ultimaPos = i*15*Vector2(5, 0) + Vector2(110,415)
@@ -56,7 +49,7 @@ func criaPessoa():
 			novapessoa.set_texture(load("res://Images/Average2/SideWalkStand.png"))
 	elif(float(labeldanovapessoa.get_text()) > 60):
 		novapessoa.set_texture(load("res://Images/Elder1/SideWalkStand.png"))
-		
+	#------------------------------	
 	_insere(novapessoa, filadepessoas)
 
 
