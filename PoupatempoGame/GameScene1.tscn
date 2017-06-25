@@ -1,19 +1,20 @@
-[gd_scene load_steps=17 format=1]
+[gd_scene load_steps=18 format=1]
 
 [ext_resource path="res://tileset1.xml" type="TileSet" id=1]
 [ext_resource path="res://tileset2.xml" type="TileSet" id=2]
 [ext_resource path="res://KinematicPrincipalScript.gd" type="Script" id=3]
 [ext_resource path="res://Images/Principal/FrontWalkStand.png" type="Texture" id=4]
-[ext_resource path="res://Images/Principal/SideWalk2.png" type="Texture" id=5]
-[ext_resource path="res://Images/Principal/SideWalkStand.png" type="Texture" id=6]
-[ext_resource path="res://Images/Principal/SideWalk1.png" type="Texture" id=7]
-[ext_resource path="res://Images/Principal/SideWalk21.png" type="Texture" id=8]
-[ext_resource path="res://Images/Principal/SideWalkStand2.png" type="Texture" id=9]
-[ext_resource path="res://Images/Principal/SideWalk22.png" type="Texture" id=10]
-[ext_resource path="res://Images/Principal/BackWalk1.png" type="Texture" id=11]
-[ext_resource path="res://Images/Principal/BackWalkStand.png" type="Texture" id=12]
-[ext_resource path="res://Images/Principal/FrontWalk1.png" type="Texture" id=13]
-[ext_resource path="res://Images/Principal/FrontWalk2.png" type="Texture" id=14]
+[ext_resource path="res://Images/Principal/SideWalkStand.png" type="Texture" id=5]
+[ext_resource path="res://Images/Principal/SideWalk21.png" type="Texture" id=6]
+[ext_resource path="res://Images/Principal/SideWalkStand2.png" type="Texture" id=7]
+[ext_resource path="res://Images/Principal/SideWalk22.png" type="Texture" id=8]
+[ext_resource path="res://Images/Principal/FrontWalk1.png" type="Texture" id=9]
+[ext_resource path="res://Images/Principal/FrontWalk2.png" type="Texture" id=10]
+[ext_resource path="res://Images/Principal/BackWalkStand.png" type="Texture" id=11]
+[ext_resource path="res://Images/Principal/SideWalk2.png" type="Texture" id=12]
+[ext_resource path="res://Images/Principal/SideWalk1.png" type="Texture" id=13]
+[ext_resource path="res://Images/Principal/BackWalk1.png" type="Texture" id=14]
+[ext_resource path="res://CenadeInstanciação.tscn" type="PackedScene" id=15]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -28,45 +29,45 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 5 ), ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ ExtResource( 5 ) ],
 "loop": true,
-"name": "AndandoEsq",
-"speed": 3.5
+"name": "ParadoEsq",
+"speed": 1.0
 }, {
-"frames": [ ExtResource( 8 ), ExtResource( 9 ), ExtResource( 10 ) ],
+"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
 "loop": true,
 "name": "AndandoDir",
 "speed": 3.5
 }, {
-"frames": [ ExtResource( 11 ), ExtResource( 12 ) ],
-"loop": true,
-"name": "AndandoCima",
-"speed": 3.5
-}, {
-"frames": [ ExtResource( 12 ) ],
-"loop": true,
-"name": "ParadoCima",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 9 ) ],
+"frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "ParadoDir",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 13 ), ExtResource( 14 ) ],
+"frames": [ ExtResource( 9 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "AndandoBaixo",
 "speed": 3.5
 }, {
-"frames": [ ExtResource( 6 ) ],
+"frames": [ ExtResource( 11 ) ],
 "loop": true,
-"name": "ParadoEsq",
-"speed": 1.0
+"name": "ParadoCima",
+"speed": 5.0
 }, {
 "frames": [ ExtResource( 4 ) ],
 "loop": true,
 "name": "ParadoBaixo",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 5 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "AndandoEsq",
+"speed": 3.5
+}, {
+"frames": [ ExtResource( 14 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "AndandoCima",
+"speed": 3.5
 } ]
 
 [node name="Node" type="Node"]
@@ -156,4 +157,9 @@ drag_margin/top = 0.2
 drag_margin/right = 0.2
 drag_margin/bottom = 0.2
 
+[node name="Node" parent="Node2D" instance=ExtResource( 15 )]
 
+editor/display_folded = true
+
+
+[editable path="Node2D/Node"]

@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=1]
 
-[ext_resource path="res://TextureFrame.gd" type="Script" id=1]
-[ext_resource path="res://poupate.png" type="Texture" id=2]
-[ext_resource path="res://po.png" type="Texture" id=3]
-[ext_resource path="res://m.png" type="Texture" id=4]
-[ext_resource path="res://thegame.png" type="Texture" id=5]
-[ext_resource path="res://button-start-game.png" type="Texture" id=6]
-[ext_resource path="res://button-start-game1.png" type="Texture" id=7]
+[ext_resource path="res://menu/TextureFrame.gd" type="Script" id=1]
+[ext_resource path="res://menu/poupate.png" type="Texture" id=2]
+[ext_resource path="res://menu/po.png" type="Texture" id=3]
+[ext_resource path="res://menu/m.png" type="Texture" id=4]
+[ext_resource path="res://menu/thegame.png" type="Texture" id=5]
+[ext_resource path="res://menu/button-start-game.png" type="Texture" id=6]
+[ext_resource path="res://menu/button-start-game1.png" type="Texture" id=7]
 
 [node name="background" type="TextureFrame"]
 
@@ -95,5 +95,7 @@ textures/normal = ExtResource( 6 )
 textures/hover = ExtResource( 7 )
 params/resize_mode = 0
 params/stretch_mode = 0
+
+[connection signal="pressed" from="Start" to="." method="_on_Start_pressed"]
 
 
