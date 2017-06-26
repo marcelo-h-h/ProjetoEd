@@ -3,6 +3,7 @@ extends Node2D
 var filadepessoas = []
 var ultimaPos = Vector2(110,415)
 var numerodepessoasinicial = 5
+var criados = false
 
 func _ready():
 	randomize()
@@ -11,8 +12,9 @@ func _ready():
 	while i < numerodepessoasinicial:
 		criaPessoa()
 		i += 1
-	get_node("tempoDeSurgimento").set_wait_time(5.2)
-	get_node("tempoDeAtendimento").set_wait_time(20)
+	criados = true
+	get_node("tempoDeSurgimento").set_wait_time(20)
+	get_node("tempoDeAtendimento").set_wait_time(60)
 	
 	
 func _draw():
@@ -33,10 +35,12 @@ func _insere(umapessoa, fila):
 				break
 		if(posicionou == 0):
 			fila.append(umapessoa)
+	umapessoa.get_child(0).hide()
 	
 func criaPessoa():
 	var novapessoa = Sprite.new()
 	var labeldanovapessoa = Label.new()
+	novapessoa.set_pos(Vector2(736, 96))
 	labeldanovapessoa.set_text(String(randi() %100))
 	while(float(labeldanovapessoa.get_text()) < 14):
 		labeldanovapessoa.set_text(String(randi() %25))
@@ -67,7 +71,9 @@ func criaPessoa():
 			novapessoa.set_texture(load("res://Images/Average2/SideWalkStand.png"))
 	novapessoa.set_scale(Vector2(1.4, 1.4))
 	#------------------------------	
-	_insere(novapessoa, filadepessoas)
+	if(criados == false):
+		_insere(novapessoa, filadepessoas)
+		
 
 
 func _on_Button_pressed():
@@ -87,5 +93,7 @@ func _atendePessoa(fila):
 	
 	
 func _on_tempoDeAtendimento_timeout():
-	get_node("tempoDeSurgimento").start()
 	_atendePessoa(filadepessoas)
+
+func get_fila():
+	return filadepessoas

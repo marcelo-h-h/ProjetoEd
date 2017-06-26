@@ -51,7 +51,7 @@ flat = false
 [node name="tempoDeSurgimento" type="Timer" parent="Node2D"]
 
 process_mode = 1
-wait_time = 5.2
+wait_time = 20.0
 one_shot = false
 autostart = true
 script/script = ExtResource( 3 )

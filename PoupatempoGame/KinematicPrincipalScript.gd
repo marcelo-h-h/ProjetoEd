@@ -33,10 +33,10 @@ func _fixed_process(delta):
 			if(viradoPara == 'B'):
 				get_node("Personagem").set_animation("ParadoBaixo")
 	if(motion != Vector2(0, 0)):
-			if(motion.x > 3):
+			if(motion.x > 2):
 				get_node("Personagem").set_animation("AndandoDir")
 				viradoPara = 'D'
-			if(motion.x < -3):
+			if(motion.x < -2):
 				get_node("Personagem").set_animation("AndandoEsq")
 				viradoPara = 'E'
 			if(motion.y < -3):
