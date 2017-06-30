@@ -39,9 +39,9 @@ func _input(event):
 				print(get_node("Node/Node2D").get_fila())
 				get_node("Node/Node2D").update()
 				get_node("Node/Node2D").criaPessoa()
-				get_node("Node/Node2D/tempoDeSurgimento").start()
+				get_node("tempoDeSurgimento").start()
 				if(get_node("Node/Node2D").get_fila().size() > 15):
-					get_tree().change_scene("res://Scenes/EndGameScene.tscn")
+					get_tree().change_scene("res://Scenes/winScene.tscn")
 			else:
 				print("LOSER")
 				get_tree().change_scene("res://Scenes/EndGameScene.tscn")
@@ -56,3 +56,11 @@ func _process(delta):
 			elemento.get_child(0).hide()
 			
 		
+
+func _on_tempoDeSurgimento_timeout():
+	get_tree().change_scene("res://Scenes/EndGameScene.tscn")
+	
+
+func _on_tempoDeAtendimentonto1_timeout():
+	get_node("Node/Node2D")._atendePessoa(get_node("Node/Node2D").get_fila())
+	filaDeComparacao.pop_front()

@@ -26,17 +26,17 @@ func _draw():
 	
 
 func _insere(umapessoa, fila):
-	if(int(umapessoa.get_child(0).get_text()) < 60):
+#if(int(umapessoa.get_child(0).get_text()) < 60):
+#	fila.append(umapessoa)
+
+	var posicionou = 0
+	for elemento in fila:
+		if(int(elemento.get_child(0).get_text()) < int(umapessoa.get_child(0).get_text())):
+			fila.insert(fila.find(elemento), umapessoa)
+			posicionou = 1
+			break
+	if(posicionou == 0):
 		fila.append(umapessoa)
-	else:
-		var posicionou = 0
-		for elemento in fila:
-			if(int(elemento.get_child(0).get_text()) < int(umapessoa.get_child(0).get_text())):
-				fila.insert(fila.find(elemento), umapessoa)
-				posicionou = 1
-				break
-		if(posicionou == 0):
-			fila.append(umapessoa)
 	umapessoa.get_child(0).hide()
 	
 func criaPessoa():
@@ -79,8 +79,7 @@ func criaPessoa():
 	pessoaQueChegou = novapessoa
 		
 
-func _on_tempoDeSurgimento_timeout():
-	print("deu timeout")
+
 	
 func _atendePessoa(fila):
 	if(fila.empty() != true):
@@ -90,8 +89,7 @@ func _atendePessoa(fila):
 	print("atendeu")
 	
 	
-func _on_tempoDeAtendimento_timeout():
-	_atendePessoa(filadepessoas)
+
 
 func get_fila():
 	return filadepessoas

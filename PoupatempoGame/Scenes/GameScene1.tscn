@@ -1,22 +1,25 @@
-[gd_scene load_steps=20 format=1]
+[gd_scene load_steps=23 format=1]
 
 [ext_resource path="res://scriptInteracaoCenaPrincipal.gd" type="Script" id=1]
 [ext_resource path="res://Images/tileset1.xml" type="TileSet" id=2]
 [ext_resource path="res://Images/tileset2.xml" type="TileSet" id=3]
 [ext_resource path="res://KinematicPrincipalScript.gd" type="Script" id=4]
 [ext_resource path="res://Images/Principal/FrontWalkStand.png" type="Texture" id=5]
-[ext_resource path="res://Images/Principal/SideWalkStand.png" type="Texture" id=6]
-[ext_resource path="res://Images/Principal/SideWalk21.png" type="Texture" id=7]
-[ext_resource path="res://Images/Principal/SideWalkStand2.png" type="Texture" id=8]
+[ext_resource path="res://Images/Principal/BackWalkStand.png" type="Texture" id=6]
+[ext_resource path="res://Images/Principal/SideWalkStand2.png" type="Texture" id=7]
+[ext_resource path="res://Images/Principal/SideWalk21.png" type="Texture" id=8]
 [ext_resource path="res://Images/Principal/SideWalk22.png" type="Texture" id=9]
-[ext_resource path="res://Images/Principal/FrontWalk1.png" type="Texture" id=10]
-[ext_resource path="res://Images/Principal/FrontWalk2.png" type="Texture" id=11]
-[ext_resource path="res://Images/Principal/BackWalk1.png" type="Texture" id=12]
-[ext_resource path="res://Images/Principal/BackWalkStand.png" type="Texture" id=13]
-[ext_resource path="res://Images/Principal/SideWalk2.png" type="Texture" id=14]
-[ext_resource path="res://Images/Principal/SideWalk1.png" type="Texture" id=15]
+[ext_resource path="res://Images/Principal/SideWalkStand.png" type="Texture" id=10]
+[ext_resource path="res://Images/Principal/SideWalk2.png" type="Texture" id=11]
+[ext_resource path="res://Images/Principal/SideWalk1.png" type="Texture" id=12]
+[ext_resource path="res://Images/Principal/FrontWalk1.png" type="Texture" id=13]
+[ext_resource path="res://Images/Principal/FrontWalk2.png" type="Texture" id=14]
+[ext_resource path="res://Images/Principal/BackWalk1.png" type="Texture" id=15]
 [ext_resource path="res://Scenes/CenadeInstanciação.tscn" type="PackedScene" id=16]
-[ext_resource path="res://audio/Little People At Work.ogg" type="AudioStream" id=17]
+[ext_resource path="res://scriptTextoTempoDeSurgimento.gd" type="Script" id=17]
+[ext_resource path="res://Fonts/FallingSky.fnt" type="BitmapFont" id=18]
+[ext_resource path="res://scriptTextoTempoDeAtendimento.gd" type="Script" id=19]
+[ext_resource path="res://audio/Little People At Work.ogg" type="AudioStream" id=20]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -31,44 +34,44 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "ParadoCima",
+"speed": 5.0
+}, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "ParadoBaixo",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "ParadoEsq",
-"speed": 1.0
-}, {
-"frames": [ ExtResource( 7 ), ExtResource( 8 ), ExtResource( 9 ) ],
-"loop": true,
-"name": "AndandoDir",
-"speed": 3.5
-}, {
-"frames": [ ExtResource( 10 ), ExtResource( 11 ) ],
-"loop": true,
-"name": "AndandoBaixo",
-"speed": 3.5
-}, {
-"frames": [ ExtResource( 12 ), ExtResource( 13 ) ],
-"loop": true,
-"name": "AndandoCima",
-"speed": 3.5
-}, {
-"frames": [ ExtResource( 8 ) ],
+"frames": [ ExtResource( 7 ) ],
 "loop": true,
 "name": "ParadoDir",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 13 ) ],
+"frames": [ ExtResource( 8 ), ExtResource( 7 ), ExtResource( 9 ) ],
 "loop": true,
-"name": "ParadoCima",
-"speed": 5.0
+"name": "AndandoDir",
+"speed": 3.5
 }, {
-"frames": [ ExtResource( 14 ), ExtResource( 6 ), ExtResource( 15 ) ],
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "ParadoEsq",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 10 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "AndandoEsq",
+"speed": 3.5
+}, {
+"frames": [ ExtResource( 13 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "AndandoBaixo",
+"speed": 3.5
+}, {
+"frames": [ ExtResource( 15 ), ExtResource( 6 ) ],
+"loop": true,
+"name": "AndandoCima",
 "speed": 3.5
 } ]
 
@@ -167,9 +170,55 @@ drag_margin/bottom = 0.2
 
 editor/display_folded = true
 
+[node name="tempoDeSurgimento" type="Timer" parent="Node2D"]
+
+process_mode = 1
+wait_time = 15.0
+one_shot = false
+autostart = true
+script/script = ExtResource( 17 )
+
+[node name="textoTempodeSurgimento" type="Label" parent="Node2D/tempoDeSurgimento"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 541.0
+margin/top = 70.0
+margin/right = 581.0
+margin/bottom = 94.0
+custom_fonts/font = ExtResource( 18 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="tempoDeAtendimentonto1" type="Timer" parent="Node2D"]
+
+process_mode = 1
+wait_time = 25.0
+one_shot = false
+autostart = true
+script/script = ExtResource( 19 )
+
+[node name="textoTempodeAtendimento" type="Label" parent="Node2D/tempoDeAtendimentonto1"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 50.0
+margin/top = 460.0
+margin/right = 90.0
+margin/bottom = 490.0
+custom_fonts/font = ExtResource( 18 )
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
 [node name="StreamPlayer" type="StreamPlayer" parent="."]
 
-stream/stream = ExtResource( 17 )
+stream/stream = ExtResource( 20 )
 stream/play = false
 stream/loop = true
 stream/volume_db = 0.0
@@ -177,5 +226,9 @@ stream/autoplay = true
 stream/paused = false
 stream/loop_restart_time = 0.0
 stream/buffering_ms = 500
+
+[connection signal="timeout" from="Node2D/tempoDeSurgimento" to="Node2D" method="_on_tempoDeSurgimento_timeout"]
+
+[connection signal="timeout" from="Node2D/tempoDeAtendimentonto1" to="Node2D" method="_on_tempoDeAtendimentonto1_timeout"]
 
 

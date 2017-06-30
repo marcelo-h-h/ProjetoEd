@@ -26,6 +26,7 @@ func _process(delta):
 		if(accum>=0.7):
 			get_node("Start").set_disabled(false)
 			get_node("Start").show()
+			get_node("instrucoes").show()
 	get_node("m").set_pos(m_pos)
 	pass
 
@@ -41,6 +42,7 @@ func _ready():
 	get_node("m").set_size(Vector2(get_node("poupatempo").get_size().width,get_node("poupatempo").get_size().height))
 	get_node("m").set_pos(Vector2(-(get_node("m").get_size().x)/1.8,(get_viewport_rect().size.height-get_node("m").get_size().height)/1.18))
 	get_node("Start").set_pos(Vector2((get_viewport().get_rect().size.width-get_node("Start").get_size().x)/2,get_viewport().get_rect().size.y/1.6))
+	get_node("instrucoes").set_pos(get_node("Start").get_pos() + Vector2(20, 110))
 	set_process(true)
 	
 	#get_node("m").set_pos(Vector2(get_node("poupatempo").get_pos().x-(get_node("poupatempo").get_size().x/2),(get_viewport_rect().size.height-get_node("m").get_size().height)/1.18))
@@ -53,3 +55,7 @@ func _ready():
 
 func _on_Start_pressed():
 	get_tree().change_scene("res://Scenes/GameScene1.tscn")
+
+
+func _on_intrucoes_pressed():
+	get_tree().change_scene("res//Scenes/InstructionsScene.tscn")
