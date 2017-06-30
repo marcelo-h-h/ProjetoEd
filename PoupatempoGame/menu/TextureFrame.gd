@@ -3,8 +3,8 @@ extends TextureFrame
 # class member variables go here, for example:
 # var a = 2
 # var b = "textvar"
-const M_SPEED = 290
-const PO_SPEED = 130 
+const M_SPEED = 550
+const PO_SPEED = 280 
 var accum = 0 
 
 func _process(delta):
@@ -52,4 +52,4 @@ func _ready():
 
 
 func _on_Start_pressed():
-	get_tree().change_scene("res://GameScene1.tscn")
+	get_tree().change_scene("res://Scenes/GameScene1.tscn")

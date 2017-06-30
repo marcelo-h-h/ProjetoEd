@@ -4,6 +4,7 @@ var filadepessoas = []
 var ultimaPos = Vector2(110,415)
 var numerodepessoasinicial = 5
 var criados = false
+var pessoaQueChegou
 
 func _ready():
 	randomize()
@@ -13,8 +14,9 @@ func _ready():
 		criaPessoa()
 		i += 1
 	criados = true
-	get_node("tempoDeSurgimento").set_wait_time(20)
-	get_node("tempoDeAtendimento").set_wait_time(60)
+	criaPessoa()
+	#get_node("tempoDeSurgimento").set_wait_time(20)
+	#get_node("tempoDeAtendimento").set_wait_time(60)
 	
 	
 func _draw():
@@ -74,22 +76,18 @@ func criaPessoa():
 	if(criados == false):
 		_insere(novapessoa, filadepessoas)
 		
-
-
-func _on_Button_pressed():
-	_atendePessoa(filadepessoas)
-
+	pessoaQueChegou = novapessoa
+		
 
 func _on_tempoDeSurgimento_timeout():
-	get_node("tempoDeSurgimento").start()
-	criaPessoa()
-	update()
+	print("deu timeout")
 	
 func _atendePessoa(fila):
 	if(fila.empty() != true):
 		fila[0].hide()
 	fila.pop_front()
 	update()
+	print("atendeu")
 	
 	
 func _on_tempoDeAtendimento_timeout():
@@ -97,3 +95,11 @@ func _on_tempoDeAtendimento_timeout():
 
 func get_fila():
 	return filadepessoas
+	
+func get_pessoaQueChegou():
+	return pessoaQueChegou
+
+func inserirAqui(pessoa, posicao):
+	filadepessoas.insert(posicao, pessoa)
+
+

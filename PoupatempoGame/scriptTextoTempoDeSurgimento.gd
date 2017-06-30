@@ -5,5 +5,6 @@ func _ready():
 	
 func _process(delta):
 	get_node("textoTempoDeSurgimento").set_text(String(round(get_time_left())))
+	get_node("textoTempoDeSurgimento").set_scale(Vector2(1.5, 1.5))
 	
 	

@@ -1,0 +1,86 @@
+[gd_scene load_steps=5 format=1]
+
+[ext_resource path="res://classedeinstanciação.gd" type="Script" id=1]
+[ext_resource path="res://Images/Principal/SideWalkStand2.png" type="Texture" id=2]
+[ext_resource path="res://scriptTextoTempoDeSurgimento.gd" type="Script" id=3]
+[ext_resource path="res://scriptTextoTempoDeAtendimento.gd" type="Script" id=4]
+
+[node name="Node" type="Node"]
+
+[node name="Node2D" type="Node2D" parent="."]
+
+script/script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="Node2D"]
+
+transform/pos = Vector2( 48.6576, 392.033 )
+transform/scale = Vector2( 1.4, 1.4 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="Node2D/Sprite"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 0.0
+margin/top = -32.0
+margin/right = 40.0
+margin/bottom = -18.0
+text = "17"
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="tempoDeSurgimento" type="Timer" parent="Node2D"]
+
+process_mode = 1
+wait_time = 20.0
+one_shot = false
+autostart = true
+script/script = ExtResource( 3 )
+
+[node name="textoTempoDeSurgimento" type="Label" parent="Node2D/tempoDeSurgimento"]
+
+rect/scale = Vector2( 1.5, 1.5 )
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 544.0
+margin/top = 64.0
+margin/right = 608.0
+margin/bottom = 96.0
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[node name="tempoDeAtendimento" type="Timer" parent="Node2D"]
+
+process_mode = 1
+wait_time = 60.0
+one_shot = false
+autostart = true
+script/script = ExtResource( 4 )
+
+[node name="textoTempoDeAtendimento" type="Label" parent="Node2D/tempoDeAtendimento"]
+
+focus/ignore_mouse = true
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 0
+margin/left = 64.0
+margin/top = 448.0
+margin/right = 128.0
+margin/bottom = 480.0
+percent_visible = 1.0
+lines_skipped = 0
+max_lines_visible = -1
+
+[connection signal="timeout" from="Node2D/tempoDeSurgimento" to="Node2D" method="_on_tempoDeSurgimento_timeout"]
+
+[connection signal="timeout" from="Node2D/tempoDeAtendimento" to="Node2D" method="_on_tempoDeAtendimento_timeout"]
+
+[connection signal="hide" from="Node2D/tempoDeAtendimento/textoTempoDeAtendimento" to="Node2D" method="_on_textoTempoDeAtendimento_hide"]
+
+
