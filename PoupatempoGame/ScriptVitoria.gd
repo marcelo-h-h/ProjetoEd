@@ -4,7 +4,7 @@ extends Label
 
 func _ready():
 	set_process(true)
-	set_text("PARABAINS TU GANHO")
+	set_text("Você Venceu!")
 	set_scale(Vector2(2, 2))
 	
 func _process(delta):
