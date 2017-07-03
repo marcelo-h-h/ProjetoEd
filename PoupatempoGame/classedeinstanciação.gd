@@ -41,29 +41,45 @@ func criaPessoa(): #função para criar as pessoas que chegam na agencia
 		labeldanovapessoa.set_text(String(randi() %25))
 	novapessoa.add_child(labeldanovapessoa) #adiciona o nó label como filho do nó sprite
 	add_child(novapessoa) #adiciona o nó sprite como filho do nó principal da cena
-	#define a textura da nova pessoa conforme sua idade --------------------
+	#---------------define a textura da nova pessoa conforme sua idade --------------------
 	if(float(labeldanovapessoa.get_text()) < 25):
-		var sorteio = randi() % 3 #define a ordem da sprite (0 a 2)
+		var sorteio = randi() % 5 #define a ordem da sprite (0 a 2)
 		if(sorteio == 0):
 			novapessoa.set_texture(load("res://Images/Young2/SideWalkStand.png"))
 		elif(sorteio == 1):
 			novapessoa.set_texture(load("res://Images/Average1/SideWalkStand.png"))
 		elif(sorteio == 2):
 			novapessoa.set_texture(load("res://Images/Average2/SideWalkStand.png"))
+		elif(sorteio == 3):
+			novapessoa.set_texture(load("res://Images/Young1/SideStand.png"))
+		elif(sorteio == 4):
+			novapessoa.set_texture(load("res://Images/Young3/SideStand.png"))
 	elif(float(labeldanovapessoa.get_text()) >= 25 && float(labeldanovapessoa.get_text()) < 60):
-		var sorteio = randi() % 2 #define a ordem da sprite (0 ou 1)
+		var sorteio = randi() % 5 #define a ordem da sprite (0 ou 1)
 		if(sorteio == 0):
 			novapessoa.set_texture(load("res://Images/Average1/SideWalkStand.png"))
-		if(sorteio == 1):
+		elif(sorteio == 1):
 			novapessoa.set_texture(load("res://Images/Average2/SideWalkStand.png"))
+		elif(sorteio == 2):
+			novapessoa.set_texture(load("res://Images/Average3/SideStand.png"))
+		elif(sorteio == 3):
+			novapessoa.set_texture(load("res://Images/Average4/SideStand.png"))
+		elif(sorteio == 4):
+			novapessoa.set_texture(load("res://Images/Average5/SideStand.png"))
 	elif(float(labeldanovapessoa.get_text()) >= 60):
-		var sorteio = randi() % 3 #define a ordem da sprite (0 a 2)
+		var sorteio = randi() % 6 #define a ordem da sprite (0 a 2)
 		if(sorteio == 0):
 			novapessoa.set_texture(load("res://Images/Elder1/SideWalkStand.png"))
 		elif(sorteio == 1):
 			novapessoa.set_texture(load("res://Images/Average1/SideWalkStand.png"))
 		elif(sorteio == 2):
 			novapessoa.set_texture(load("res://Images/Average2/SideWalkStand.png"))
+		elif(sorteio == 3):
+			novapessoa.set_texture(load("res://Images/Average3/SideStand.png"))
+		elif(sorteio == 4):
+			novapessoa.set_texture(load("res://Images/Average4/SideStand.png"))
+		elif(sorteio == 5):
+			novapessoa.set_texture(load("res://Images/Average5/SideStand.png"))
 	novapessoa.set_scale(Vector2(1.4, 1.4))
 	#--------------------------------------------------------------------------
 	if(criados == false):
@@ -74,7 +90,7 @@ func criaPessoa(): #função para criar as pessoas que chegam na agencia
 	
 func _atendePessoa(fila): #função que retira o primeiro nó da fila
 	if(fila.empty() != true):
-		fila[0].hide()
+		fila[0].queue_free()
 	fila.pop_front()
 	update()
 

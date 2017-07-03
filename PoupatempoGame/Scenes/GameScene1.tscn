@@ -5,13 +5,13 @@
 [ext_resource path="res://Images/tileset2.xml" type="TileSet" id=3]
 [ext_resource path="res://KinematicPrincipalScript.gd" type="Script" id=4]
 [ext_resource path="res://Images/Principal/FrontWalkStand.png" type="Texture" id=5]
-[ext_resource path="res://Images/Principal/SideWalk2.png" type="Texture" id=6]
-[ext_resource path="res://Images/Principal/SideWalkStand.png" type="Texture" id=7]
+[ext_resource path="res://Images/Principal/SideWalkStand.png" type="Texture" id=6]
+[ext_resource path="res://Images/Principal/SideWalk2.png" type="Texture" id=7]
 [ext_resource path="res://Images/Principal/SideWalk1.png" type="Texture" id=8]
-[ext_resource path="res://Images/Principal/SideWalkStand2.png" type="Texture" id=9]
-[ext_resource path="res://Images/Principal/SideWalk21.png" type="Texture" id=10]
-[ext_resource path="res://Images/Principal/SideWalk22.png" type="Texture" id=11]
-[ext_resource path="res://Images/Principal/BackWalkStand.png" type="Texture" id=12]
+[ext_resource path="res://Images/Principal/BackWalkStand.png" type="Texture" id=9]
+[ext_resource path="res://Images/Principal/SideWalkStand2.png" type="Texture" id=10]
+[ext_resource path="res://Images/Principal/SideWalk21.png" type="Texture" id=11]
+[ext_resource path="res://Images/Principal/SideWalk22.png" type="Texture" id=12]
 [ext_resource path="res://Images/Principal/FrontWalk1.png" type="Texture" id=13]
 [ext_resource path="res://Images/Principal/FrontWalk2.png" type="Texture" id=14]
 [ext_resource path="res://Images/Principal/BackWalk1.png" type="Texture" id=15]
@@ -34,42 +34,42 @@ animations = [ {
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ), ExtResource( 8 ) ],
-"loop": true,
-"name": "AndandoEsq",
-"speed": 3.5
-}, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "ParadoEsq",
-"speed": 1.0
-}, {
 "frames": [ ExtResource( 5 ) ],
 "loop": true,
 "name": "ParadoBaixo",
 "speed": 5.0
 }, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "ParadoEsq",
+"speed": 1.0
+}, {
+"frames": [ ExtResource( 7 ), ExtResource( 6 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "AndandoEsq",
+"speed": 3.5
+}, {
 "frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "ParadoCima",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
 "loop": true,
 "name": "ParadoDir",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 10 ), ExtResource( 9 ), ExtResource( 11 ) ],
+"frames": [ ExtResource( 11 ), ExtResource( 10 ), ExtResource( 12 ) ],
 "loop": true,
 "name": "AndandoDir",
 "speed": 3.5
-}, {
-"frames": [ ExtResource( 12 ) ],
-"loop": true,
-"name": "ParadoCima",
-"speed": 5.0
 }, {
 "frames": [ ExtResource( 13 ), ExtResource( 14 ) ],
 "loop": true,
 "name": "AndandoBaixo",
 "speed": 3.5
 }, {
-"frames": [ ExtResource( 15 ), ExtResource( 12 ) ],
+"frames": [ ExtResource( 15 ), ExtResource( 9 ) ],
 "loop": true,
 "name": "AndandoCima",
 "speed": 3.5
@@ -115,7 +115,7 @@ collision/bounce = 0.0
 collision/layers = 1
 collision/mask = 1
 occluder/light_mask = 1
-tile_data = IntArray( 22, 22, 23, 24, 65553, 12, 65558, 23, 65559, 25, 131085, 9, 196621, 10, 262157, 11, 262183, 13, 327719, 14, 458773, 19, 458776, 19, 524309, 19, 524312, 19, 589845, 19, 589848, 19, 655381, 19, 655384, 19, 720898, 21, 720899, 17, 720900, 17, 720901, 17, 720902, 17, 720903, 17, 720904, 17, 720905, 17, 720906, 17, 720907, 17, 720908, 17, 720909, 17, 720910, 17, 720911, 17, 720912, 17, 720913, 17, 720914, 17, 720915, 17, 720916, 17, 720917, 18, 720920, 19, 786434, 0, 786456, 19, 851969, 3, 851970, 1, 851992, 19, 917506, 2, 917507, 20, 917508, 20, 917509, 20, 917510, 20, 917511, 20, 917512, 20, 917513, 20, 917514, 20, 917515, 20, 917516, 20, 917517, 20, 917518, 20, 917519, 20, 917520, 20, 917521, 20, 917522, 20, 917523, 20, 917524, 20, 917525, 20, 917526, 20, 917527, 20, 917528, 18, 1114133, 8, 1114134, 8, 1114135, 8, 1114136, 8, 1114137, 8, 1179657, 7, 1179658, 6, 1245193, 4, 1245194, 5, 1245205, 8, 1245206, 8, 1245207, 8, 1245208, 8, 1245209, 8, 1376277, 8, 1376278, 8, 1376279, 8, 1376280, 8, 1376281, 8 )
+tile_data = IntArray( 22, 22, 23, 24, 65553, 12, 65558, 23, 65559, 25, 131085, 9, 131093, 19, 131096, 19, 196621, 10, 196629, 19, 196632, 19, 262157, 11, 262165, 19, 262168, 19, 262183, 13, 327701, 19, 327704, 19, 327719, 14, 393237, 19, 393240, 19, 458773, 19, 458776, 19, 524309, 19, 524312, 19, 589845, 19, 589848, 19, 655381, 19, 655384, 19, 720898, 21, 720899, 17, 720900, 17, 720901, 17, 720902, 17, 720903, 17, 720904, 17, 720905, 17, 720906, 17, 720907, 17, 720908, 17, 720909, 17, 720910, 17, 720911, 17, 720912, 17, 720913, 17, 720914, 17, 720915, 17, 720916, 17, 720917, 18, 720920, 19, 786434, 0, 786456, 19, 851969, 3, 851970, 1, 851992, 19, 917506, 2, 917507, 20, 917508, 20, 917509, 20, 917510, 20, 917511, 20, 917512, 20, 917513, 20, 917514, 20, 917515, 20, 917516, 20, 917517, 20, 917518, 20, 917519, 20, 917520, 20, 917521, 20, 917522, 20, 917523, 20, 917524, 20, 917525, 20, 917526, 20, 917527, 20, 917528, 18, 1114133, 8, 1114134, 8, 1114135, 8, 1114136, 8, 1114137, 8, 1179657, 7, 1179658, 6, 1245193, 4, 1245194, 5, 1245205, 8, 1245206, 8, 1245207, 8, 1245208, 8, 1245209, 8, 1376277, 8, 1376278, 8, 1376279, 8, 1376280, 8, 1376281, 8 )
 
 [node name="KinematicBody2D" type="KinematicBody2D" parent="Node2D"]
 
